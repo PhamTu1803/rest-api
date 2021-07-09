@@ -28,11 +28,17 @@
                                 <rect key="frame" x="93" y="218" width="59" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Location"/>
+                                <connections>
+                                    <action selector="locationtapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uzg-Nw-J3H"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DDS-Wu-QCK">
                                 <rect key="frame" x="95" y="283" width="55" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Episode"/>
+                                <connections>
+                                    <action selector="btnepisodetapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ewD-ry-dZz"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -73,6 +79,66 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dpb-DB-0zm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1721.7391304347827" y="38.839285714285715"/>
+        </scene>
+        <!--Episode View Controller-->
+        <scene sceneID="e7A-IO-CDN">
+            <objects>
+                <viewController storyboardIdentifier="EpisodeViewController" id="LNt-hs-YfL" customClass="EpisodeViewController" customModule="API_Realm_Cd" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pxQ-oI-Vr0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Lva-Un-EEc">
+                                <rect key="frame" x="20" y="269" width="374" height="593"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Y49-g5-Fz3"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Lva-Un-EEc" firstAttribute="top" secondItem="Y49-g5-Fz3" secondAttribute="top" constant="225" id="5mE-zi-1Xa"/>
+                            <constraint firstItem="Y49-g5-Fz3" firstAttribute="trailing" secondItem="Lva-Un-EEc" secondAttribute="trailing" constant="20" id="F0o-SW-Uqg"/>
+                            <constraint firstItem="Lva-Un-EEc" firstAttribute="bottom" secondItem="Y49-g5-Fz3" secondAttribute="bottom" id="VlA-17-fwx"/>
+                            <constraint firstItem="Lva-Un-EEc" firstAttribute="leading" secondItem="Y49-g5-Fz3" secondAttribute="leading" constant="20" id="amA-Zk-S04"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="episodeTbview" destination="Lva-Un-EEc" id="0nh-1D-q8N"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cvr-v3-TzZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1000.0000000000001" y="729.24107142857144"/>
+        </scene>
+        <!--Location View Controller-->
+        <scene sceneID="gU3-uI-f59">
+            <objects>
+                <viewController storyboardIdentifier="LocationViewController" id="dnr-y3-uo0" customClass="LocationViewController" customModule="API_Realm_Cd" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LLi-B3-u0Q">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oIg-sM-Css">
+                                <rect key="frame" x="20" y="201" width="374" height="661"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="aK2-o9-ln9"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="oIg-sM-Css" firstAttribute="top" secondItem="aK2-o9-ln9" secondAttribute="top" constant="157" id="Mcx-73-4Im"/>
+                            <constraint firstItem="oIg-sM-Css" firstAttribute="leading" secondItem="aK2-o9-ln9" secondAttribute="leading" constant="20" id="cEV-yo-Ebo"/>
+                            <constraint firstItem="oIg-sM-Css" firstAttribute="bottom" secondItem="aK2-o9-ln9" secondAttribute="bottom" id="cRP-sp-pbb"/>
+                            <constraint firstItem="aK2-o9-ln9" firstAttribute="trailing" secondItem="oIg-sM-Css" secondAttribute="trailing" constant="20" id="qmF-iy-xlW"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="locationTbview" destination="oIg-sM-Css" id="q80-VB-wma"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U0c-ua-gJw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1721.7391304347827" y="729.24107142857144"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="La4-da-j7j">
